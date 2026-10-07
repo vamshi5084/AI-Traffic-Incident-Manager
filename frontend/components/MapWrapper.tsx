@@ -2,6 +2,14 @@
 
 import dynamic from "next/dynamic";
 
+type TrafficArea = {
+  name: string;
+  vehicles: number;
+  incidents: number;
+  highSeverity: number;
+  traffic: string;
+};
+
 const TrafficMap = dynamic(
   () => import("./TrafficMap"),
   {
@@ -9,6 +17,14 @@ const TrafficMap = dynamic(
   }
 );
 
-export default function MapWrapper() {
-  return <TrafficMap />;
+export default function MapWrapper({
+  areas,
+}: {
+  areas: TrafficArea[];
+}) {
+  return (
+    <TrafficMap
+      areas={areas}
+    />
+  );
 }

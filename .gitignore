@@ -22,3 +22,10 @@ frontend/out/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local CCTV videos
+backend/videos/
+
+# Generated analysis frames
+backend/accident_frames/
+backend/timeline_frames/
